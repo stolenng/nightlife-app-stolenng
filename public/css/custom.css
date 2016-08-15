@@ -7,85 +7,17 @@
     display:inline-block;
 }
 
-.main-buttons-fix {
-    margin-right:40px;
+.w3-blue {
+    background-color: #3498db;
 }
 
-.header-margin-fix {
-    margin-top:70px;
-}
-
-.signup-controller .col-xs-12 {
-    text-align: center;
-}
-
-.signup-controller .form-group {
-    display: inline-block;
-    width: 50%;
-}
-
-.error {
-    border:1px solid red;
-}
-
-.error:focus {
-    border:1px solid red;
-}
-
-
-.create-poll-options .form-group {
-    width:100%;
-}
-
-
-
-.poll-view {
-    margin-top:100px;
-}
-
-#pie {
-    width: 100% !important;
-    max-width: 800px;
-    height: auto !important;
-}
-
-#fixSelectBug option[value="? string:fuck this shit ?"] {
-    display: none;
-}
-
-.w3-padding-128 {
-    padding-top: 95px!important;
-    padding-bottom: 40px!important;
-}
-
-.polls {
-    margin-top:25px;
-}
-
-.poll-div {
-    box-shadow: 0px 1px 4px 2px #000;
-    width:20%;
-    margin: 0 25px;
-    cursor:pointer;
-}
-
-.poll-div label {
-    display: inline-block;
-}
-
-.my-polls {
+.header-margin-fix  {
     margin-top: 100px;
 }
 
-.deletePost {
-    top: 3px;
-    margin-right: 10px;
-}
-
-.poll-view button {
+.sendButton {
     width:100%;
 }
-
 
 /*Responsive FIx*/
 

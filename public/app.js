@@ -1,4 +1,4 @@
-var myApp = angular.module('myApp', ['ui.router', 'chart.js', 'oitozero.ngSweetAlert', '720kb.socialshare']);
+var myApp = angular.module('myApp', ['ui.router', 'oitozero.ngSweetAlert', 'google.places']);
 
 myApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 
@@ -18,19 +18,6 @@ myApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $
         url: '/signin',
         templateUrl: '/public/scripts/views/sign-in.html',
         controller: 'signInController'
-    }).
-    state('create-poll', {
-        url: '/create-poll',
-        templateUrl: '/public/scripts/views/create-poll.html',
-        controller: 'createPollController'
-    }).
-    state('my-polls', {
-        url: '/my-polls',
-        templateUrl: '/public/scripts/views/my-polls.html'
-    }).
-    state('poll-view', {
-        url: '/poll-view/:pollId',
-        templateUrl: '/public/scripts/views/poll-view.html'
     });
 
 

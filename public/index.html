@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 <link rel="stylesheet" href="public/css/font-awesome.min.css">
-
+<link rel="stylesheet" href="public/bower_components/angular-google-places-autocomplete/src/autocomplete.css">
 <link rel="stylesheet" href="public/bower_components/bootstrap/dist/css/bootstrap.css">
 <link rel="stylesheet" href="public/bower_components/sweetalert/dist/sweetalert.css">
 <link rel="stylesheet" href="public/css/w3.css">
@@ -44,15 +44,13 @@
     <div ng-controller="mainController">
 
         <!-- Navbar -->
-        <ul class="w3-navbar w3-red w3-card-2 w3-top w3-left-align w3-large navbar">
+        <ul class="w3-navbar w3-blue w3-card-2 w3-top w3-left-align w3-large navbar">
             <li class="w3-hide-medium w3-hide-large w3-opennav w3-right">
-                <a class="w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+                <a class="w3-padding-large w3-hover-white w3-large " href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
             </li>
             <li><a href="" ng-class="{ 'w3-white': state.is('main')  }" class="w3-padding-large mobileHide" ng-click="redirectTo('main')">Home</a></li>
             <li class="w3-hide-small"><a href="" ng-class="{ 'w3-white': state.is('signin') }" class="w3-padding-large w3-hover-white" ng-show="!userLogged" ng-click="redirectTo('signin')" ng-cloak>Sign In</a></li>
             <li class="w3-hide-small"><a ng-class="{ 'w3-white': state.is('signup') }" href="" class="w3-padding-large w3-hover-white" ng-click="redirectTo('signup')" ng-cloak ng-show="!userLogged">Sign Up</a></li>
-            <li class="w3-hide-small"><a ng-class="{ 'w3-white': state.is('my-polls') }" class="w3-padding-large w3-hover-white" ng-show="userLogged" ng-cloak href="" ng-click="redirectTo('my-polls')">My Polls</a></li>
-            <li class="w3-hide-small"><a ng-class="{ 'w3-white': state.is('create-poll') }" class="w3-padding-large w3-hover-white" ng-show="userLogged" ng-cloak href="" ng-click="redirectTo('create-poll')">Create Poll</a></li>
             <li class="w3-hide-small"><a class="w3-padding-large w3-hover-white" ng-show="userLogged" ng-cloak href="" ng-click="logOut()">Logout</a></li>
         </ul>
 
@@ -62,8 +60,6 @@
                 <li><a  ng-cloak ng-click="redirectTo('main')" class="w3-padding-large" href="">Home</a></li>
                 <li ng-show="!userLogged"><a ng-class="{ 'w3-white': state.is('signin') }" ng-cloak ng-click="redirectTo('signin')" class="w3-padding-large" href="" >Sign In</a></li>
                 <li ng-show="!userLogged"><a ng-class="{ 'w3-white': state.is('signup') } " ng-cloak ng-click="redirectTo('signup')" class="w3-padding-large" href="" >Sign Up</a></li>
-                <li  ng-show="userLogged"><a class="w3-padding-large" href=""  ng-cloak ng-click="redirectTo('my-polls')">My Polls</a></li>
-                 <li  ng-show="userLogged"><a class="w3-padding-large"  ng-cloak href="" ng-click="redirectTo('create-poll')">Create Poll</a></li>
                 <li  ng-show="userLogged"><a class="w3-padding-large" href="" ng-cloak ng-click="logOut()">Logout </a></li>
             </ul>
         </div>
@@ -138,11 +134,11 @@
     <script src="public/bower_components/jquery/dist/jquery.js"></script>
     <script src="public/bower_components/angular/angular.js"></script>
     <script src="public/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-    <script src="public/bower_components/Chart.js/dist/Chart.js"></script>
-    <script src="public/bower_components/angular-chart.js/angular-chart.js"></script>
     <script src="public/bower_components/ngSweetAlert/SweetAlert.min.js"></script>
     <script src="public/bower_components/sweetalert/dist/sweetalert.min.js"></script>
-    <script src="public/bower_components/angular-socialshare/dist/angular-socialshare.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
+    <script src="public/bower_components/angular-google-places-autocomplete/src/autocomplete.js"></script>
+
 
 
     <!-- Angular Main App -->
@@ -151,8 +147,9 @@
     <!--Angular Services-->
     <script src="public/scripts/services/authIntercpetor.factory.js"></script>
     <script src="public/scripts/services/users.service.js"></script>
-    <script src="public/scripts/services/polls.service.js"></script>
-    
+    <script src="public/scripts/services/places.service.js"></script>
+
+
 
 
     <!--Angular Controllers-->
@@ -160,9 +157,7 @@
     <script src="public/scripts/controllers/home.controller.js"></script>
     <script src="public/scripts/controllers/signup.controller.js"></script>
     <script src="public/scripts/controllers/signin.controller.js"></script>
-    <script src="public/scripts/controllers/create-poll.controller.js"></script>
-    <script src="public/scripts/controllers/poll-view.controller.js"></script>
-    <script src="public/scripts/controllers/my-polls.controller.js"></script>
+
 
 
 
